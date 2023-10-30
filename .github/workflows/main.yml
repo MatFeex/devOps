@@ -21,5 +21,5 @@ jobs:
 
             #finally build your app with the latest command
             - name: Build and test with Maven
-              run: mvn clean install
+              run: mvn clean verify
               working-directory: backend\simpleapi\simple-api-student
