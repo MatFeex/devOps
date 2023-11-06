@@ -1,28 +1,32 @@
 version: '3.7'
 
 services:
+  # Service for the backend application.
   backend:
     build: ./backend/simpleapi/simple-api-student
     container_name: backend
     networks:
       - app-network
     depends_on:
-      - database
+      - database  # Ensure that the 'backend' service starts after the 'database' service.
 
+  # Service for the database.
   database:
     container_name: database
     build: ./database
     networks:
       - app-network
 
+  # Service for an HTTP server (e.g., Apache HTTP server).
   httpd:
     build: ./http
     ports:
-      - "8081:80"
+      - "8081:80"  # Map host port 8081 to container port 80.
     networks:
       - app-network
     depends_on:
-      - backend
+      - backend  # Ensure that the 'httpd' service starts after the 'backend' service.
 
+# Define a custom Docker network for the services to communicate.
 networks:
   app-network:

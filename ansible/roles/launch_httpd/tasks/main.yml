@@ -1,0 +1,9 @@
+# tasks file for launch_httpd
+- name: Run the HTTPD Container
+  docker_container:
+    name: httpd
+    image: matfeex/tp-devops-simple-api-httpd:latest
+    ports:
+      - "80:80"
+    networks:
+      - name: app-network

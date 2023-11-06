@@ -1,0 +1,7 @@
+# tasks file for launch_backend
+- name: Run the Backend
+  docker_container:
+    name: backend
+    image: matfeex/tp-devops-simple-api-backend:latest
+    networks:
+      - name: app-network

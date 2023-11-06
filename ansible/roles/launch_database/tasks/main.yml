@@ -1,0 +1,7 @@
+# tasks file for launch_database
+- name: Start the Database Service
+  docker_container:
+    name: database
+    image: matfeex/tp-devops-simple-api-database:latest
+    networks:
+      - name: app-network

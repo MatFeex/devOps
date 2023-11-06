@@ -1,0 +1,9 @@
+- hosts: all
+  gather_facts: false
+  become: true
+  roles:
+    - docker
+    - create_network
+    - launch_backend
+    - launch_database
+    - launch_httpd

@@ -1,0 +1,10 @@
+# tasks file for create_network
+- name: Create Docker Network
+  docker_network:
+    name: app-network
+    driver: bridge
+  register: network_info
+
+- name: Debug Network Info
+  debug:
+    var: network_info
