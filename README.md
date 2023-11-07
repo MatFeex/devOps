@@ -1,5 +1,23 @@
 # DevOps Project Documentation
 
+## Table of Contents
+- [Docker](#docker)
+  - [1-2 Why do we need a multistage build? And explain each step of this Dockerfile.](#1-2-why-do-we-need-a-multistage-build-and-explain-each-step-of-this-dockerfile)
+  - [1-3 Document docker-compose most important commands.](#1-3-document-docker-compose-most-important-commands)
+  - [1-4 Document your docker-compose file.](#1-4-document-your-docker-compose-file)
+  - [1-5 Document your publication commands and published images in Docker Hub.](#1-5-document-your-publication-commands-and-published-images-in-docker-hub)
+- [GitHub Actions](#github-actions)
+  - [What is it supposed to do? - mvn clean verify](#what-is-it-supposed-to-do-mvn-clean-verify)
+  - [2-1 What are testcontainers?](#2-1-what-are-testcontainers)
+  - [2-2 Document your GitHub Actions configurations.](#2-2-document-your-github-actions-configurations)
+  - [For what purpose do we need to push Docker images?](#for-what-purpose-do-we-need-to-push-docker-images)
+  - [Document your quality gate configuration.](#document-your-quality-gate-configuration)
+- [Ansible](#ansible)
+  - [3-1 Document your inventory and base commands](#3-1-document-your-inventory-and-base-commands)
+  - [3-2 Document your playbook](#3-2-document-your-playbook)
+  - [Ansible Playbook Docker Container Tasks Configuration](#ansible-playbook-docker-container-tasks-configuration)
+
+
 ## Docker
 
 ### 1-2 Why do we need a multistage build? And explain each step of this Dockerfile.
@@ -181,7 +199,7 @@ Quality gate configuration using SonarCloud involves:
 
 **Roles:**
 
-You've organized my tasks into specific roles to modularize my automation. Here are the roles I used:
+Tasks have been organized into specific roles to modularize automation. Here are the roles I used:
 
 - `docker`: Manages the installation of Docker on my hosts.
 
@@ -247,4 +265,4 @@ This section documents the configuration for the `docker_container` tasks in the
 1. **Run the HTTPD Container:**
    - This task employs the `docker_container` module to create a Docker container named "httpd" with the image "matfeex/tp-devops-simple-api-httpd:latest." It exposes port "80" on the host and connects to the "app-network" for network communication.
 
-These tasks represent the configuration for each role in my Ansible playbook and are responsible for setting up and managing Docker containers for my application. If you have any specific questions or need further details, please feel free to ask.
+These tasks represent the configuration for each role in my Ansible playbook and are responsible for setting up and managing Docker containers in the application.
