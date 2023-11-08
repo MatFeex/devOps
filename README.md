@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Docker](#docker)
+  - [1-1 Document your database container essentials: commands and Dockerfile.](#1-1-document-your-database-container-essentials-commands-and-dockerfile)
   - [1-2 Why do we need a multistage build? And explain each step of this Dockerfile.](#1-2-why-do-we-need-a-multistage-build-and-explain-each-step-of-this-dockerfile)
   - [1-3 Document docker-compose most important commands.](#1-3-document-docker-compose-most-important-commands)
   - [1-4 Document your docker-compose file.](#1-4-document-your-docker-compose-file)
@@ -18,7 +19,25 @@
   - [Ansible Playbook Docker Container Tasks Configuration](#ansible-playbook-docker-container-tasks-configuration)
 
 
-## Docker
+## Docker  
+
+### 1-1 Document your database container essentials: commands and Dockerfile.
+
+**Dockerfile (`Dockerfile`):**
+
+- Base image: PostgreSQL 14.1 on Alpine Linux.
+- Environment variables set for database name, username, and password.
+- Copies SQL scripts for schema creation and data insertion to the container's initialization directory.
+
+**CreateScheme.sql:**
+
+- SQL script to create "departments" and "students" tables.
+
+**InsertData.sql:**
+
+- SQL script to insert data into "departments" and "students" tables.
+
+In essence, the Dockerfile defines a PostgreSQL container with specified environment variables and initializes it using SQL scripts for schema and data setup.
 
 ### 1-2 Why do we need a multistage build? And explain each step of this Dockerfile.
 
